@@ -7,6 +7,9 @@
             <class name="org.TestPractices.test.lambdatest.SingleSelectDropDownTest">
                 <methods>
                     <include name="testSelectByText"/>
+                    <include name="testSelectByIndex"/>
+                    <include name="testSelectByValue"/>
+                    <include name="testDisplayAllOptions"/>
                 </methods>
             </class>
         </classes>

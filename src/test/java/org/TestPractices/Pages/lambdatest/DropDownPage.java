@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import java.util.List;
 
 public class DropDownPage {
 
@@ -28,6 +29,21 @@ public class DropDownPage {
 
     public String getSelectedOptionText() {
         return getSelectedOption().getText();
+    }
+
+    public void selectByIndex(int index) {
+        singleDropDown().selectByIndex(index);
+    }
+
+    public void selectByValue(String value) {
+        singleDropDown().selectByValue(value);
+    }
+
+    public void getAllDropDownOptions() {
+        List<WebElement> options = singleDropDown().getOptions();
+        options.forEach(option -> {
+            System.out.println(option.getText());
+        });
     }
 
 }
