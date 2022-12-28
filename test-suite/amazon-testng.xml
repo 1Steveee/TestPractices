@@ -4,7 +4,7 @@
     <test name = "Browser Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.TestPractices.AmazonTest">
+            <class name="org.TestPractices.test.amazon.AmazonTest">
                 <methods>
                     <include name="testSearchResultTitle"/>
                 </methods>

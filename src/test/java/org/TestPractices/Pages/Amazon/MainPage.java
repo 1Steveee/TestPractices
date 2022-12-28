@@ -25,7 +25,7 @@ public class MainPage {
     }
 
     public WebElement firstResult() {
-        return driver.findElements(By.cssSelector("h2 > a")).get(0);
+        return driver.findElement(By.cssSelector("h2 > a"));
     }
 
     public void searchTerm(String wordSearch) {

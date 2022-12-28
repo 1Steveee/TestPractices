@@ -4,7 +4,7 @@
     <test name = "Browser Test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.TestPractices.SeleniumTest">
+            <class name="org.TestPractices.test.theinternet.SeleniumTest">
                 <methods>
                     <include name="testLeftFrame"/>
                 </methods>

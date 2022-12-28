@@ -28,12 +28,20 @@ public class NestedFrames {
         return driver.findElement(By.name("frame-right"));
     }
 
+    public WebElement frameMiddle() {
+        return driver.findElement(By.name("frame-middle"));
+    }
+
     public void switchToFrame(WebElement frame) {
         driver.switchTo().frame(frame);
     }
 
     public String getText() {
         return frameBody().getText();
+    }
+
+    public void switchToParentFrame() {
+        driver.switchTo().parentFrame();
     }
 
 }

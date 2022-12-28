@@ -1,7 +1,8 @@
-package org.TestPractices;
+package org.TestPractices.test.amazon;
 
 import org.TestPractices.Pages.Amazon.MainPage;
 import org.TestPractices.Pages.Amazon.ProductPage;
+import org.TestPractices.test.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,7 +15,9 @@ public class AmazonTest extends BaseTest {
 
     @BeforeClass
     public void setUpTest() {
+//        driverManager.getDriver().get("https://www.amazon.in/");
         driver = driverManager.getDriver();
+        driver.get("https://www.amazon.in/");
     }
 
     @Test
