@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Lambda Practice Test">
-    <test name = "Browser Test">
+    <test name = "Single Select Dropdown Test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.TestPractices.test.lambdatest.SingleSelectDropDownTest">
@@ -10,6 +10,18 @@
                     <include name="testSelectByIndex"/>
                     <include name="testSelectByValue"/>
                     <include name="testDisplayAllOptions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name = "Multi Select Dropdown Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.TestPractices.test.lambdatest.MultiSelectDropDownTest">
+                <methods>
+                    <include name="testFirst"/>
+                    <include name="testSelectMultipleValues"/>
+                    <include name="testDeselectMultipleValues"/>
                 </methods>
             </class>
         </classes>
