@@ -78,4 +78,10 @@ public class DropDownPage {
             multiDropDown().deselectByVisibleText(textToBeDeselected[i]);
         }
     }
+
+    public void deselectAllValues() {
+        multiDropDown().deselectAll();
+    }
+
+
 }

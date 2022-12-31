@@ -6,12 +6,7 @@ import org.TestPractices.test.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class MultiSelectDropDownTest extends BaseTest {
@@ -38,11 +33,12 @@ public class MultiSelectDropDownTest extends BaseTest {
     public void testDeselectMultipleValues() {
         String[] textToBeSelected = new String[] {"California","Florida","New Jersey","New York",
                 "Ohio","Texas","Pennsylvania","Washington"};
+        String[] testValues = new String[] {"California", "Florida"};
+
         this.dropDownPage.selectMultipleByVisibleText(textToBeSelected);
-        this.dropDownPage.deselectMultipleValues(new String[] {"California", "Florida"});
-        String[] expectedValues = new String[] {"New Jersey","New York",
-                "Ohio","Texas","Pennsylvania","Washington"};
-        assertTrue(Arrays.equals(this.dropDownPage.getMultiSelectedOptions(), expectedValues));
+        this.dropDownPage.deselectAllValues();
+        this.dropDownPage.selectMultipleByVisibleText(testValues);
+        assertTrue(Arrays.equals(this.dropDownPage.getMultiSelectedOptions(), testValues));
 
     }
 
