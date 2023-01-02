@@ -8,8 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.*;
 
 public class MultiCheckboxTest extends BaseTest {
 
@@ -27,7 +26,14 @@ public class MultiCheckboxTest extends BaseTest {
     @Test
     public void testCheckAllBtn() {
         this.checkboxPage.clickBtn(this.checkboxPage.checkAllBtn());
+        this.checkboxPage.checkIfAllBtnChecked();
+        assertTrue(this.checkboxPage.checkIfAllBtnChecked());
+        assertEquals
+                (this.checkboxPage.getCheckboxAttribute(checkboxPage.uncheckAllBtn()), "uncheck all");
         this.checkboxPage.clickBtn(this.checkboxPage.uncheckAllBtn());
+        assertFalse(this.checkboxPage.checkIfAllBtnChecked());
+        assertEquals
+                (this.checkboxPage.getCheckboxAttribute(checkboxPage.checkAllBtn()), "check all");
     }
 
 }
