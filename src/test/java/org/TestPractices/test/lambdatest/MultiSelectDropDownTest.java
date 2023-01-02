@@ -17,7 +17,7 @@ public class MultiSelectDropDownTest extends BaseTest {
     @BeforeClass
     public void setUpTest() {
         driver = driverManager.getDriver();
-        driver.get("https://www.lambdatest.com/selenium-playground/select-dropdown-demo");
+        driver.get("https://www.lambdatest.com/selenium-playground");
         MainPage mainPage = new MainPage(driver);
         this.dropDownPage = mainPage.clickDrownDownLink();
     }

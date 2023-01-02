@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lambda Practice Test">
+<!--    <test name = "Single checkbox Test">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="org.TestPractices.test.lambdatest.SingleCheckboxTest">-->
+<!--                <methods>-->
+<!--                    <include name="testSingleCheckbox"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name = "Multi Checkbox Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.TestPractices.test.lambdatest.MultiCheckboxTest">
+                <methods>
+                    <include name="testCheckAllBtn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
