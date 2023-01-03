@@ -16,7 +16,7 @@ public class MainPage {
         return driver.findElement(By.xpath("//a[text()=\"Select Dropdown List\"]"));
     }
 
-    public WebElement singleCheckboxLink() {
+    public WebElement checkboxLink() {
         return driver.findElement(By.xpath("//a[text()=\"Checkbox Demo\"]"));
     }
 
@@ -25,8 +25,8 @@ public class MainPage {
         return new DropDownPage(driver);
     }
 
-    public CheckboxPage clickSingleCheckboxLink() {
-        singleCheckboxLink().click();
+    public CheckboxPage clickCheckboxLink() {
+        checkboxLink().click();
         return new CheckboxPage(driver);
     }
 }

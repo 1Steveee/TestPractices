@@ -54,21 +54,21 @@ public class CheckboxPage {
         return checkbox.getAttribute("value");
     }
 
-    public List<WebElement> inputBtns() {
+    public List<WebElement> inputBtnList() {
         return driver.findElements(By.cssSelector(".cb-element"));
     }
 
     public boolean checkIfAllBtnChecked() {
-        List<WebElement> inputBtns = inputBtns();
-        int numOfSelectedBtns = 0;
+        List<WebElement> inputBtnList = inputBtnList();
+        int numOfSelectedBtn = 0;
 
-        for (int i = 0; i < inputBtns.size(); i++) {
-            if (inputBtns.get(i).isSelected()) {
-                numOfSelectedBtns++;
+        for (int i = 0; i < inputBtnList.size(); i++) {
+            if (inputBtnList.get(i).isSelected()) {
+                numOfSelectedBtn++;
             }
         }
 
-        if (numOfSelectedBtns == 4) {
+        if (numOfSelectedBtn == 4) {
             return true;
         } else {
             return false;

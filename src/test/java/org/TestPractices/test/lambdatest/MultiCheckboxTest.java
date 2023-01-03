@@ -3,7 +3,6 @@ package org.TestPractices.test.lambdatest;
 import org.TestPractices.Pages.lambdatest.CheckboxPage;
 import org.TestPractices.Pages.lambdatest.MainPage;
 import org.TestPractices.test.base.BaseTest;
-import org.TestPractices.utilities.Helper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -20,7 +19,7 @@ public class MultiCheckboxTest extends BaseTest {
         driver = driverManager.getDriver();
         driver.get("https://www.lambdatest.com/selenium-playground/");
         MainPage mainPage = new MainPage(driver);
-        this.checkboxPage = mainPage.clickSingleCheckboxLink();
+        this.checkboxPage = mainPage.clickCheckboxLink();
     }
 
     @Test
