@@ -24,15 +24,10 @@ public class MultiCheckboxTest extends BaseTest {
 
     @Test
     public void testCheckAllBtn() {
-        this.checkboxPage.clickBtn(this.checkboxPage.checkAllBtn());
-        this.checkboxPage.checkIfAllBtnChecked();
-        assertTrue(this.checkboxPage.checkIfAllBtnChecked());
-        assertEquals
-                (this.checkboxPage.getCheckboxAttribute(checkboxPage.uncheckAllBtn()), "uncheck all");
-        this.checkboxPage.clickBtn(this.checkboxPage.uncheckAllBtn());
-        assertFalse(this.checkboxPage.checkIfAllBtnChecked());
-        assertEquals
-                (this.checkboxPage.getCheckboxAttribute(checkboxPage.checkAllBtn()), "check all");
+        assertTrue(this.checkboxPage.checkAllBtns());
+        assertEquals(this.checkboxPage.getUncheckAllBtnAttribute(), "uncheck all");
+        assertFalse(this.checkboxPage.uncheckAllBtns());
+        assertEquals(this.checkboxPage.getCheckAllBtnAttribute(), "check all");
     }
 
 }

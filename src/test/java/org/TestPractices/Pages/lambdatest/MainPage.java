@@ -20,6 +20,10 @@ public class MainPage {
         return driver.findElement(By.xpath("//a[text()=\"Checkbox Demo\"]"));
     }
 
+    public WebElement radioButtonLink() {
+        return driver.findElement(By.linkText("Radio Buttons Demo"));
+    }
+
     public DropDownPage clickDrownDownLink() {
         dropDownListLink().click();
         return new DropDownPage(driver);
@@ -28,5 +32,10 @@ public class MainPage {
     public CheckboxPage clickCheckboxLink() {
         checkboxLink().click();
         return new CheckboxPage(driver);
+    }
+
+    public RadioButtonPage clickRadioButtonLink() {
+        radioButtonLink().click();
+        return new RadioButtonPage(driver);
     }
 }

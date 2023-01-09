@@ -20,7 +20,7 @@ public class SingleCheckboxTest extends BaseTest {
         driver = driverManager.getDriver();
         driver.get("https://www.lambdatest.com/selenium-playground/");
         MainPage mainPage = new MainPage(driver);
-        this.checkboxPage = mainPage.clickSingleCheckboxLink();
+        this.checkboxPage = mainPage.clickCheckboxLink();
     }
 
     @Test

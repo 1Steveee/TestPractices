@@ -14,11 +14,11 @@ public class CheckboxPage {
         this.driver = driver;
     }
 
-    public WebElement singleCheckbox() {
+    private WebElement singleCheckbox() {
         return driver.findElement(By.id("isAgeSelected"));
     }
 
-    public WebElement successMessage() {
+    private WebElement successMessage() {
         return driver.findElement(By.id("txtAge"));
     }
 
@@ -30,9 +30,6 @@ public class CheckboxPage {
         return driver.findElement(By.cssSelector("input[value=\"uncheck all\"]"));
     }
 
-    public List<WebElement> getAllInputBtn() {
-        return driver.findElements(By.cssSelector(".cb-element"));
-    }
 
     public void clickSingleCheckbox() {
         singleCheckbox().click();
@@ -58,8 +55,27 @@ public class CheckboxPage {
         return driver.findElements(By.cssSelector(".cb-element"));
     }
 
-    public boolean checkIfAllBtnChecked() {
+    public boolean checkAllBtns() {
+        checkAllBtn().click();
+        return checkIfBtnAreChecked();
+    }
+
+    public boolean uncheckAllBtns() {
+        uncheckAllBtn().click();
+        return checkIfBtnAreChecked();
+    }
+
+    public String getUncheckAllBtnAttribute() {
+        return uncheckAllBtn().getAttribute("value");
+    }
+
+    public String getCheckAllBtnAttribute() {
+        return checkAllBtn().getAttribute("value");
+    }
+
+    public boolean checkIfBtnAreChecked() {
         List<WebElement> inputBtnList = inputBtnList();
+        int numbOfBtn = inputBtnList.size();
         int numOfSelectedBtn = 0;
 
         for (int i = 0; i < inputBtnList.size(); i++) {
@@ -68,7 +84,7 @@ public class CheckboxPage {
             }
         }
 
-        if (numOfSelectedBtn == 4) {
+        if (numOfSelectedBtn == numbOfBtn) {
             return true;
         } else {
             return false;
