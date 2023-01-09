@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lambda Practice Test">
+    <test name = "Javascript Alerts Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.TestPractices.test.lambdatest.JavaScriptAlertsTest">
+                <methods>
+                    <include name="testJavaScriptAlertMessage"/>
+                    <include name="testAlertConfirmMessage"/>
+                    <include name="testAlertCancelMessage"/>
+                    <include name="testPromptAcceptAlertMessage"/>
+                    <include name="testPromptDismissAlertMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

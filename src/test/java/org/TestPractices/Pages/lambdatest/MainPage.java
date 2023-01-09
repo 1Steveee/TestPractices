@@ -24,6 +24,10 @@ public class MainPage {
         return driver.findElement(By.linkText("Radio Buttons Demo"));
     }
 
+    public WebElement javaScriptAlertsLink() {
+        return driver.findElement(By.linkText("Javascript Alerts"));
+    }
+
     public DropDownPage clickDrownDownLink() {
         dropDownListLink().click();
         return new DropDownPage(driver);
@@ -37,5 +41,10 @@ public class MainPage {
     public RadioButtonPage clickRadioButtonLink() {
         radioButtonLink().click();
         return new RadioButtonPage(driver);
+    }
+
+    public JavaScriptAlertsPage clickJavaScriptAlertsLink() {
+        javaScriptAlertsLink().click();
+        return new JavaScriptAlertsPage(driver);
     }
 }
