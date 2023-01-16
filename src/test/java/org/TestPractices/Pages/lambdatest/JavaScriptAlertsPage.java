@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 import static org.TestPractices.utilities.Helper.refreshPage;
 
@@ -26,13 +27,18 @@ public class JavaScriptAlertsPage {
         return driver.findElement(By.cssSelector(".btn.btn-dark.my-30"));
     }
 
+    public List<WebElement> alertButton() {
+        return driver.findElements(By.cssSelector(".btn.btn-dark.mx-10"));
+    }
+
     public WebElement confirmAlertBtn() {
-        return driver.findElements(By.cssSelector(".btn.btn-dark.mx-10")).get(1);
+        return alertButton().get(1);
     }
 
     public WebElement promptAlertBtn() {
-        return driver.findElements(By.cssSelector(".btn.btn-dark.mx-10")).get(2);
+        return alertButton().get(2);
     }
+
 
     public WebElement confirmMessage() {
         return driver.findElement(By.id("confirm-demo"));

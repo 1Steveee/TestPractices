@@ -12,20 +12,24 @@ public class MainPage {
         this.driver = driver;
     }
 
-    public WebElement dropDownListLink() {
+    private WebElement dropDownListLink() {
         return driver.findElement(By.xpath("//a[text()=\"Select Dropdown List\"]"));
     }
 
-    public WebElement checkboxLink() {
+    private WebElement checkboxLink() {
         return driver.findElement(By.xpath("//a[text()=\"Checkbox Demo\"]"));
     }
 
-    public WebElement radioButtonLink() {
+    private WebElement radioButtonLink() {
         return driver.findElement(By.linkText("Radio Buttons Demo"));
     }
 
-    public WebElement javaScriptAlertsLink() {
+    private WebElement javaScriptAlertsLink() {
         return driver.findElement(By.linkText("Javascript Alerts"));
+    }
+
+    private WebElement tablePaginationLink() {
+        return driver.findElement(By.linkText("Table Pagination"));
     }
 
     public DropDownPage clickDrownDownLink() {
@@ -46,5 +50,10 @@ public class MainPage {
     public JavaScriptAlertsPage clickJavaScriptAlertsLink() {
         javaScriptAlertsLink().click();
         return new JavaScriptAlertsPage(driver);
+    }
+
+    public TablePage clickTablePaginationLink() {
+        tablePaginationLink().click();
+        return new TablePage(driver);
     }
 }

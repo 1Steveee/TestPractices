@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class RadioButtonPage {
 
@@ -17,7 +18,15 @@ public class RadioButtonPage {
     }
 
     public WebElement femaleRadioBtn() {
-        return driver.findElements(By.name("optradio")).get(1);
+        return singleSelectRadioBtn().get(1);
+    }
+
+    public List<WebElement> singleSelectRadioBtn() {
+        return driver.findElements(By.name("optradio"));
+    }
+
+    public WebElement maleRadioButton() {
+        return singleSelectRadioBtn().get(0);
     }
 
     public WebElement maleGenderRadioBtn() {
@@ -41,8 +50,13 @@ public class RadioButtonPage {
         return driver.findElement(By.className("radiobutton")).getText();
     }
 
-    public void selectSingleRadioBtn() {
-        femaleRadioBtn().click();
+    public void selectSingleRadioBtn(String gender) {
+        if (gender.equalsIgnoreCase("Male")) {
+            maleRadioButton().click();
+        } else {
+            femaleRadioBtn().click();
+        }
+
     }
 
     public void selectMultipleRadioBtn() {

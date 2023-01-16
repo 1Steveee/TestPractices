@@ -24,7 +24,7 @@ public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testSingleRadioBtn() {
-        this.radioButtonPage.selectSingleRadioBtn();
+        this.radioButtonPage.selectSingleRadioBtn("Female");
         assertEquals(this.radioButtonPage.getCheckedValue(), "Radio button 'Female' is checked");
     }
 
