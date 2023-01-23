@@ -34,19 +34,20 @@ public class TablePage {
         return tableBody().findElements(By.tagName("tr"));
     }
 
-    public void setDropdownMaxRowDisplay(int maxRows) {
-        maxRowDropDown().selectByValue(Integer.toString(maxRows));
+    public void setDropdownMaxRowDisplay(String maxRows) {
+        maxRowDropDown().selectByValue(maxRows);
     }
 
     public int getTotalNumberOfRows() {
         List<WebElement> rows = getRows();
-        AtomicInteger numOfRowsDisplayed = new AtomicInteger();
-        rows.forEach(row -> {
+        int numOfRowsDisplayed = 0;
+        for (WebElement row : rows) {
             if (row.isDisplayed()) {
-                numOfRowsDisplayed.getAndIncrement();
+                numOfRowsDisplayed++;
             }
-        });
-        return numOfRowsDisplayed.get();
+        }
+
+        return numOfRowsDisplayed;
     }
 
     public ArrayList<String> getRowData(int rowNumber) {

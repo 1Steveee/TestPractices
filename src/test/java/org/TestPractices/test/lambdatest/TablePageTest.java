@@ -26,13 +26,13 @@ public class TablePageTest extends BaseTest {
 
     @Test
     public void testSetMaximumRows() {
-        tablePage.setDropdownMaxRowDisplay(10);
+        tablePage.setDropdownMaxRowDisplay("10");
         assertEquals(tablePage.getTotalNumberOfRows(), 10);
     }
 
     @Test
     public void testValidateRowData() {
-        tablePage.setDropdownMaxRowDisplay(10);
+        tablePage.setDropdownMaxRowDisplay("10");
         ArrayList<String> rowData = tablePage.getRowData(2);
         assertEquals(rowData, tablePage.expectedValues(new String[]{"2",
                 "Kuame Parsons","non.sapien@in.com", "1-962-122-8834", "Aug 2, 2015"}));
