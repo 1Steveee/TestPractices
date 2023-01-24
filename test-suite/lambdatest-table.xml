@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Lambda Practice Test">
     <test name = "Table Pagination Test">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="remote_chrome"/>
         <classes>
             <class name="org.TestPractices.test.lambdatest.TablePageTest">
                 <methods>

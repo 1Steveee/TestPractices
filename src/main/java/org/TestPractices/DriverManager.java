@@ -6,10 +6,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class DriverManager {
 
+    private static final String HUB_URL = "http://localhost:4444";
     private WebDriver driver;
 
     public WebDriver getDriver() {
@@ -23,20 +29,46 @@ public class DriverManager {
             createEdgeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             createFireFoxDriver();
-        } else {
+        } else if (browser.equalsIgnoreCase("remote_chrome")) {
+            createRemoteChromeDriver();
+        } else if (browser.equalsIgnoreCase("remote_edge")) {
+            createRemoteEdgeDriver();
+        }
+
+        else {
             System.out.println("Browser should either be chrome, edge, or firefox.");
         }
     }
 
-    public void createFireFoxDriver() {
+    private void createRemoteEdgeDriver() {
+        final DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("MicrosoftEdge");
+        try {
+            driver = new RemoteWebDriver(new URL(HUB_URL), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void createRemoteChromeDriver() {
+        final DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("chrome");
+        try {
+            driver = new RemoteWebDriver(new URL(HUB_URL), capabilities);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void createFireFoxDriver() {
         driver = new FirefoxDriver();
     }
 
-    public void createEdgeDriver() {
+    private void createEdgeDriver() {
         driver = new EdgeDriver();
     }
 
-    public void createChromeDriver() {
+    private void createChromeDriver() {
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--headless");
         driver = new ChromeDriver();

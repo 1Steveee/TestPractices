@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Lambda Practice Test">
     <test name = "Single Select Dropdown Test">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="remote_chrome"/>
         <classes>
             <class name="org.TestPractices.test.lambdatest.SingleSelectDropDownTest">
                 <methods>
@@ -15,7 +15,7 @@
         </classes>
     </test>
     <test name = "Multi Select Dropdown Test">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="remote_chrome"/>
         <classes>
             <class name="org.TestPractices.test.lambdatest.MultiSelectDropDownTest">
                 <methods>
