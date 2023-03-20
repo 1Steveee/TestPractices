@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lambda Practice Test">
+    <test name = "Table Pagination Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.TestPractices.test.lambdatest.DatePickerTest">
+                <methods>
+                    <include name="testDateRangePicker"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -48,4 +48,9 @@ public class MainPage {
         findElementByLinkText("Input Form Submit").click();
         return new InputFormPage(driver);
     }
+
+    public DatePickerPage clickDatePickerLink() {
+        findElementByLinkText("Bootstrap Date Picker").click();
+        return new DatePickerPage(driver);
+    }
 }

@@ -69,9 +69,9 @@ public class DriverManager {
     }
 
     private void createChromeDriver() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
     }
 
     public void stopDriver() {
