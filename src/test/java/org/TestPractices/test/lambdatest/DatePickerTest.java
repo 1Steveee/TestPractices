@@ -32,6 +32,6 @@ public class DatePickerTest extends BaseTest {
     public void testMultiDateRange() {
         this.datePickerPage.selectMultiDates("04/03/2025", "05/05/2025");
         assertEquals("04/03/2025", this.datePickerPage.getStartDateText());
-        assertEquals("05/05/2025", this.datePickerPage.getEndDateText());
+        assertEquals("05/05/202", this.datePickerPage.getEndDateText());
     }
 }
