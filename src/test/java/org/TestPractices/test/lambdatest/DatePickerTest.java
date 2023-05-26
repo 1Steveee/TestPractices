@@ -23,8 +23,15 @@ public class DatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testDateRangePicker() throws InterruptedException {
-        this.datePickerPage.selectFromDate("December", "20", "2024");
-        assertEquals(this.datePickerPage.getStartDateFieldText(), "12/20/2024");
+    public void testSingleDatePicker()  {
+        this.datePickerPage.selectSingleDate("04/03/2025");
+        assertEquals("2025-04-03", this.datePickerPage.getSingleDateInput());
+    }
+
+    @Test
+    public void testMultiDateRange() {
+        this.datePickerPage.selectMultiDates("04/03/2025", "05/05/2025");
+        assertEquals("04/03/2025", this.datePickerPage.getStartDateText());
+        assertEquals("05/05/2025", this.datePickerPage.getEndDateText());
     }
 }

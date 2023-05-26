@@ -6,7 +6,8 @@
         <classes>
             <class name="org.TestPractices.test.lambdatest.DatePickerTest">
                 <methods>
-                    <include name="testDateRangePicker"/>
+                    <include name="testSingleDatePicker"/>
+                    <include name="testMultiDateRange"/>
                 </methods>
             </class>
         </classes>
