@@ -4,9 +4,9 @@
     <test name = "Browser Test">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="org.TestPractices.test.amazon.AmazonTest">
+            <class name="org.TestPractices.test.ecommerce.SeleniumTest">
                 <methods>
-                    <include name="testSearchResultTitle"/>
+                    <include name="testSignUp"/>
                 </methods>
             </class>
         </classes>
